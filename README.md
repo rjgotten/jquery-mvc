@@ -142,9 +142,9 @@ jQuery.mvc.model
 ----------------
 
 The model singleton assumes the following responsibilities:
-*	Maintaining a cache of data proxy instances.
-*	Providing methods for registering, unregistering and retrieving data proxies.
-*	Notifiying data proxies when they are registered or removed.
+	* Maintaining a cache of data proxy instances.
+	* Providing methods for registering, unregistering and retrieving data proxies.
+	* Notifiying data proxies when they are registered or removed.
 
 ### jQuery.mvc.model.register( [name], proxy, options, [data] )
 
@@ -194,9 +194,9 @@ jQuery.mvc.view
 ---------------
 
 The view singleton assumes the following responsibilities:
-*	Maintaining a cache of view mediator instances.
-*	Providing methods for registering, unregistering or retrieving view mediators.
-*	Notifiying view mediators when they are registered or unregistered.
+	* Maintaining a cache of view mediator instances.
+	* Providing methods for registering, unregistering or retrieving view mediators.
+	* Notifiying view mediators when they are registered or unregistered.
 
 ### jQuery.mvc.view.register( [name], mediator, options, [element] )
 
@@ -250,9 +250,9 @@ jQuery.mvc.controller
 ---------------------
 
 The controller singleton assumes these responsibilities:
-*	Maintaining a cache of constructor functions for commands intended to handle notifications.
-*	Registering itself as an observer for each notification that it receives a command mapping for.
-*	Creating and executing instances of the proper command to handle an observed notification.	 
+	* Maintaining a cache of constructor functions for commands intended to handle notifications.
+	* Registering itself as an observer for each notification that it receives a command mapping for.
+	* Creating and executing instances of the proper command to handle an observed notification.	 
 
 
 ### jQuery.mvc.controller.register( notificationName, command, options )
@@ -294,10 +294,10 @@ jQuery.mvc.notifier
 -------------------
 
 The notifier assumes these responsibilities:
-*	Managing the observer lists for each notification in the application.
-*	Providing a method for attaching observers to a notification's observer list.
-*	Providing a method for broadcasting a notification.
-*	Notifying observers of a given notification when it is broadcast.
+	* Managing the observer lists for each notification in the application.
+	* Providing a method for attaching observers to a notification's observer list.
+	* Providing a method for broadcasting a notification.
+	* Notifying observers of a given notification when it is broadcast.
 
 The notifier should not be used directly by the programmer, unless performing such activities as unit testing.
 
