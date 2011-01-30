@@ -95,7 +95,7 @@ The following example defines a view mediator that can display updates to the co
 Controller & commands
 ---------------------
 
-The controller component of the MVC pattern should focus on application/business logic that must be run when particular events, i.e., notifications take place. The controller delegates its actions to a series of commands, custom built by the programmer. A command us registered with the controller for a particular type of notification: each notification may only have a single command registered. Each time a notification is received, a fresh instance of the registered command in question will be created and its contained application/business logic will be executed. The underlying implementation of a command is left to the programmer.
+The controller component of the MVC pattern should focus on application/business logic that must be run when particular events, i.e., notifications take place. The controller delegates its actions to a series of commands, custom built by the programmer. A command is registered with the controller for a particular type of notification: each notification may only have a single command registered. Each time a notification is received, a fresh instance of the registered command in question will be created and its contained application/business logic will be executed. The underlying implementation of a command is left to the programmer.
 
 ### An example: a simple incrementing counter (continued)
 
