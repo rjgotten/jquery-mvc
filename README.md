@@ -142,163 +142,168 @@ jQuery.mvc.model
 ----------------
 
 The model singleton assumes the following responsibilities:
-- Maintaining a cache of data proxy instances.
-- Providing methods for registering, unregistering and retrieving data proxies.
-- Notifiying data proxies when they are registered or removed.
+
+* Maintaining a cache of data proxy instances.
+* Providing methods for registering, unregistering and retrieving data proxies.
+* Notifiying data proxies when they are registered or removed.
 
 ### jQuery.mvc.model.register( [name], proxy, options, [data] )
 
 Creates and registers a new named instance of a particular proxy class with the model. If no name is given, one will automatically be generated. The proxy can be configured using a hash of key-value options and may optionally be given an initial data object to act upon.
 
-		// creating a manually named instance
-		proxy = jQuery.mvc.model.register( "instanceName", ProxyClass, { key: "value" });
-		
-		// creating an automatically named instance
-		proxy = jQuery.mvc.model.register( ProxyClass, { key: "value" });
-		
-		// creating a manually named instance with initial data object
-		proxy = jQuery.mvc.model.register( "instanceName", ProxyClass, { key: "value" }, { foo: 1, bar: "2" })
+	// creating a manually named instance
+	proxy = jQuery.mvc.model.register( "instanceName", ProxyClass, { key: "value" });
+	
+	// creating an automatically named instance
+	proxy = jQuery.mvc.model.register( ProxyClass, { key: "value" });
+	
+	// creating a manually named instance with initial data object
+	proxy = jQuery.mvc.model.register( "instanceName", ProxyClass, { key: "value" }, { foo: 1, bar: "2" })
 
 ### jQuery.mvc.model.remove( {name|proxy} )
 
 Removes a proxy instance previously registered with the model.
 
-		// assuming a proxy named "instanceName"
-		jQuery.mvc.model.remove( "instanceName" );
+	// assuming a proxy named "instanceName"
+	jQuery.mvc.model.remove( "instanceName" );
 
-		// assuming 'proxy' refers to a registered proxy instance
-		jQuery.mvc.model.remove( proxy );
+	// assuming 'proxy' refers to a registered proxy instance
+	jQuery.mvc.model.remove( proxy );
 
 ### jQuery.mvc.model.has( name )
 
 Checks if a proxy has been registered with the model under the given name.
 
-		// assuming a proxy named "instanceName" is registered
-		jQuery.mvc.model.has( "instanceName" ); // true
+	// assuming a proxy named "instanceName" is registered
+	jQuery.mvc.model.has( "instanceName" ); // true
 
-		// assuming a proxy named "instanceName" is not registered
-		jQuery.mvc.model.has( "instanceName" ); // false
+	// assuming a proxy named "instanceName" is not registered
+	jQuery.mvc.model.has( "instanceName" ); // false
 
 ### jQuery.mvc.model.get( name )
 
 Retrieves an existing instance of a proxy from the model, if one exists.
 
-		// assuming a registered proxy named "instanceName"
-		proxy = jQuery.mvc.model.get( "instanceName" ); // the proxy instance
+	// assuming a registered proxy named "instanceName"
+	proxy = jQuery.mvc.model.get( "instanceName" ); // the proxy instance
 
-		// assuming a proxy named "instanceName" is not registered
-		proxy = jQuery.mvc.model.get( "instanceName" ); // null
+	// assuming a proxy named "instanceName" is not registered
+	proxy = jQuery.mvc.model.get( "instanceName" ); // null
 
 		
 jQuery.mvc.view
 ---------------
 
 The view singleton assumes the following responsibilities:
-- Maintaining a cache of view mediator instances.
-- Providing methods for registering, unregistering or retrieving view mediators.
-- Notifiying view mediators when they are registered or unregistered.
+
+* Maintaining a cache of view mediator instances.
+* Providing methods for registering, unregistering or retrieving view mediators.
+* Notifiying view mediators when they are registered or unregistered.
 
 ### jQuery.mvc.view.register( [name], mediator, options, [element] )
 
 Creates and registers a new named instance of a particular mediator class with the view. If no name is given, one will automatically be generated. The mediator can be configured using a hash of key-value options. Generally, the mediator should be given a DOM element to act upon. However, for those cases where a mediator has no ties to the DOM the element parameter is made optional. You may pass a string-based selector, a DOM element or a jQuery selector object. 
 
-		// creating a manually named instance
-		mediator = jQuery.mvc.view.register( "instanceName", MediatorClass, { key: "value" }, "body" );
+	// creating a manually named instance
+	mediator = jQuery.mvc.view.register( "instanceName", MediatorClass, { key: "value" }, "body" );
 
-		// passing a DOM element 
-		mediator = jQuery.mvc.view.register( "instanceName", MediatorClass, { key: "value" }, document.body );
-		
-		// passing a jQuery selector object
-		mediator = jQuery.mvc.view.register( "instanceName", MediatorClass, { key: "value" }, $( "body" ));
-		
-		// creating an automatically named instance
-		mediator = jQuery.mvc.view.register( MediatorClass, { key: "value" }, "body" );		
+	// passing a DOM element 
+	mediator = jQuery.mvc.view.register( "instanceName", MediatorClass, { key: "value" }, document.body );
+	
+	// passing a jQuery selector object
+	mediator = jQuery.mvc.view.register( "instanceName", MediatorClass, { key: "value" }, $( "body" ));
+	
+	// creating an automatically named instance
+	mediator = jQuery.mvc.view.register( MediatorClass, { key: "value" }, "body" );
 		
 ### jQuery.mvc.view.remove( {name|mediator} )
 
 Removes a mediator instance previously registered with the view.
 
-		// assuming a mediator named "instanceName" is registered
-		jQuery.mvc.view.remove( "instanceName" );
+	// assuming a mediator named "instanceName" is registered
+	jQuery.mvc.view.remove( "instanceName" );
 
-		// assuming 'mediator' refers to a registered mediator instance
-		jQuery.mvc.view.remove( mediator );
+	// assuming 'mediator' refers to a registered mediator instance
+	jQuery.mvc.view.remove( mediator );
 
 ### jQuery.mvc.view.has( name )
 
 Checks if a mediator has been registered with the view under the given name.
 
-		// assuming a mediator named "instanceName" is registered
-		jQuery.mvc.view.has( "instanceName" ); // true
+	// assuming a mediator named "instanceName" is registered
+	jQuery.mvc.view.has( "instanceName" ); // true
 
-		// assuming a mediator named "instanceName" is not registered
-		jQuery.mvc.view.has( "instanceName" ); // false
+	// assuming a mediator named "instanceName" is not registered
+	jQuery.mvc.view.has( "instanceName" ); // false
 
 ### jQuery.mvc.view.get( name )
 
 Retrieves an existing instance of a mediator from the view, if one exists.
 
-		// assuming a registered mediator named "instanceName"
-		mediator = jQuery.mvc.view.get( "instanceName" ); // the mediator instance
+	// assuming a registered mediator named "instanceName"
+	mediator = jQuery.mvc.view.get( "instanceName" ); // the mediator instance
 
-		// assuming a mediator named "instanceName" is not registered
-		mediator = jQuery.mvc.view.get( "instanceName" ); // null
-		
-		
-		
+	// assuming a mediator named "instanceName" is not registered
+	mediator = jQuery.mvc.view.get( "instanceName" ); // null
+	
+
+	
 jQuery.mvc.controller
 ---------------------
 
 The controller singleton assumes these responsibilities:
-- Maintaining a cache of constructor functions for commands intended to handle notifications.
-- Registering itself as an observer for each notification that it receives a command mapping for.
-- Creating and executing instances of the proper command to handle an observed notification.	 
 
+* Maintaining a cache of constructor functions for commands intended to handle notifications.
+* Registering itself as an observer for each notification that it receives a command mapping for.
+* Creating and executing instances of the proper command to handle an observed notification.	 
 
 ### jQuery.mvc.controller.register( notificationName, command, options )
 
 Registers a command class with the controller. Individual instances of the command will be created and executed for each observed notification of the given name. Created instances can be configured using a hash of key-value options.
 
-		// registering a command for a notification
-		jQuery.mvc.controller.register( "notificationName", CommandClass, { key: "value" });
+	// registering a command for a notification
+	jQuery.mvc.controller.register( "notificationName", CommandClass, { key: "value" });
 		
 ### jQuery.mvc.controller.remove( notificationName )
 
 Removes a command registered for a particular notifcation from the controller.
 
-		// assuming a notification named "notificationName" has a command registered
-		jQuery.mvc.controller.remove( "notificationName" );
+	// assuming a notification named "notificationName" has a command registered
+	jQuery.mvc.controller.remove( "notificationName" );
 		
 ### jQuery.mvc.controller.has( notificationName )
 
 Checks if a notification has a command registered with the controller.
 
-		// assuming a notification named "notificationName" has a command registered
-		jQuery.mvc.controller.has( "notificationName" ); // true
+	// assuming a notification named "notificationName" has a command registered
+	jQuery.mvc.controller.has( "notificationName" ); // true
 
-		// assuming a notification named "notificationName" has no command registered
-		jQuery.mvc.controller.has( "notificationName" ); // false
+	// assuming a notification named "notificationName" has no command registered
+	jQuery.mvc.controller.has( "notificationName" ); // false
 
 ### jQuery.mvc.controller.get( notificationName )
 
 Retrieves a registered command's constructor function from the controller, if one exists.
 
-		// assuming a notification named "notificationName" has a command registered
-		Command = jQuery.mvc.controller.get( "notificationName" ); // the command's constructor function
+	// assuming a notification named "notificationName" has a command registered
+	Command = jQuery.mvc.controller.get( "notificationName" ); // the command's constructor function
 
-		// assuming a notification named "notificationName" has no command registered
-		Command = jQuery.mvc.controller.get( "notificationName" ); // null
-		
-		
+	// assuming a notification named "notificationName" has no command registered
+	Command = jQuery.mvc.controller.get( "notificationName" ); // null
+
+
+
 jQuery.mvc.notifier
 -------------------
 
 The notifier assumes these responsibilities:
-- Managing the observer lists for each notification in the application.
-- Providing a method for attaching observers to a notification's observer list.
-- Providing a method for broadcasting a notification.
-- Notifying observers of a given notification when it is broadcast.
 
+* Managing the observer lists for each notification in the application.
+* Providing a method for attaching observers to a notification's observer list.
+* Providing a method for broadcasting a notification.
+* Notifying observers of a given notification when it is broadcast.
+
+*IMPORTANT*  
 The notifier should not be used directly by the programmer, unless performing such activities as unit testing.
 
 ### jQuery.mvc.notifier.register( "notificationName", observer )
