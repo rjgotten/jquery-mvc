@@ -1,7 +1,7 @@
 Introduction
 ============
 
-This plugin extends jQuery with a small boilerplate framework for development according to the classic Model-View-Controller architectural pattern. The focus of this plugin is on keeping things light and flexible, and not forcing the programmer into the architecture of a full framework. There are no restriction by having to 'buy into' any architecture or library other than jQuery core itself and the plugin's MVC boilerplate, which - because of re-use of established practices - will feel largely reminiscent of jQuery UI widgets.
+This plugin extends jQuery with a small boilerplate framework for development according to the classic Model-View-Controller architectural pattern. The focus of this plugin is on keeping things light and flexible, and not forcing the programmer into the architecture of a full framework. There are no restrictions by having to 'buy into' any architecture or library other than jQuery core itself and the plugin's MVC boilerplate, which - because of re-use of established practices - will feel largely reminiscent of jQuery UI widgets.
 
 License
 -------
@@ -44,7 +44,7 @@ When an instance of the counter has been created, it can be incremented using th
 View & view mediators
 ---------------------
 
-The view component of the MVC pattern should focus on two things. First, it should focus on presenting data to the user. Second, it should focus on monitoring the user's interaction with interactive user interface components. The view delegates its actions to a series of view mediators, custom-built by the programmer. View mediators registered with the model may listen for notifications carrying fresh data or may send notifications carrying user input. To display changed data Mediators might directly manipulate the DOM, but they can also rely on other jQuery plugins or on jQuery UI widgets. The underlying implementation is left to the programmer.
+The view component of the MVC pattern should focus on two things. First, it should focus on presenting data to the user. Second, it should focus on monitoring the user's interaction with interactive user interface components. The view delegates its actions to a series of view mediators, custom-built by the programmer. View mediators registered with the view may listen for notifications carrying fresh data or may send notifications carrying user input. To display changed data Mediators might directly manipulate the DOM, but they can also rely on other jQuery plugins or on jQuery UI widgets. The underlying implementation is left to the programmer.
 
 ### An example: a simple incrementing counter (continued)
 
